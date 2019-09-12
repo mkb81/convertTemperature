@@ -1,4 +1,4 @@
-# Tempertaure convert
+# Temperature convert
 This application converts temperatures between degrees Celsius, Fahrenheit and Kelvin.
 
 The following system requirements are need:
