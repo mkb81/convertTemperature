@@ -1,5 +1,5 @@
 # Temperature convert
-This application converts temperatures between degrees Celsius, Fahrenheit and Kelvin.
+This application converts temperatures between degrees Celsius, Fahrenheit and Kelvin.  
 The following system requirements are need:
 * Xcode: 10.3
 * OS: macOS 10.14.6
