@@ -21,8 +21,9 @@ func mainMenu() {
     print("Please chose: ", terminator: "")
 }
 
-/// Temperature input
+/// User temperature input
 ///
+/// Reads the user input from keyboard and convert input string to double typ.
 /// - Returns:
 ///   - double: Temperature value
 ///   - nil:    If convert from string to double fails
@@ -38,57 +39,37 @@ func userInput() -> Double? {
 /// Main function
 func main() {
     let convert = Temperature()
-
+    
     while true {
         mainMenu()
         let input = readLine()
-
+        
+        guard let degree = userInput() else {
+            print("User input was wrong!\n")
+            continue
+        }
         switch input {
         case "1":
-            guard let degree = userInput() else {
-                print("User input was wrong!")
-                continue
-            }
             convert.setCelsius(value: degree)
             convert.celsiusToFahrenheit()
             print("\(String(format: "%.2f",convert.getCelsius())) degree Celsius are \(String(format: "%.2f",convert.getFahrenheit())) degree Fahrenheit\n\n")
         case "2":
-            guard let degree = userInput() else {
-                print("User input was wrong!")
-                continue
-            }
             convert.setCelsius(value: degree)
             convert.celsiusToKelvin()
             print("\(String(format: "%.2f",convert.getCelsius())) degree Celsius are \(String(format: "%.2f",convert.getKelvin())) degree Kelvin\n\n")
         case "3":
-            guard let degree = userInput() else {
-                print("User input was wrong!")
-                continue
-            }
             convert.setFahrenheit(value: degree)
             convert.FahrenheitToCelsius()
             print("\(String(format: "%.2f",convert.getFahrenheit())) degree Fahrneheit are \(String(format: "%.2f",convert.getCelsius())) degree Celsius\n\n")
         case "4":
-            guard let degree = userInput() else {
-                print("User input was wrong!")
-                continue
-            }
             convert.setFahrenheit(value: degree)
             convert.FahrenheitToKelvin()
             print("\(String(format: "%.2f",convert.getFahrenheit())) degree Fahrneheit are \(String(format: "%.2f",convert.getKelvin())) degree Kelvin\n\n")
         case "5":
-            guard let degree = userInput() else {
-                print("User input was wrong!")
-                continue
-            }
             convert.setKelvin(value: degree)
             convert.KelvinToFahrenheit()
             print("\(convert.getKelvin()) degree Kelvin are \(convert.getFahrenheit()) degree Fahrnehei\n\n")
         case "6":
-            guard let degree = userInput() else {
-                print("User input was wrong!")
-                continue
-            }
             convert.setKelvin(value: degree)
             convert.KelvinToCelsius()
             print("\(convert.getKelvin()) degree Kelvin are \(convert.getCelsius()) degree Celsius\n\n")
@@ -101,3 +82,4 @@ func main() {
 }
 
 main()
+
