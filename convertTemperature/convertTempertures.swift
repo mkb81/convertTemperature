@@ -90,7 +90,7 @@ public class Temperature {
     
     /// Convert from degree Celsius to degree Kelvin
     public func celsiusToKelvin() {
-        self.kelvin = (self.celsius + absoluteZeroCelsius)
+        self.kelvin = (self.celsius + (absoluteZeroCelsius * -1))
     }
     
     /// Convert from degree Fahrenheit to degree Celsius
@@ -100,17 +100,17 @@ public class Temperature {
     
     /// Convert from degree Fahrenheit to degree Kelvin
     public func FahrenheitToKelvin() {
-        self.kelvin = self.fahrenheit - absoluteZeroFahrenhet / 1.8
+        self.kelvin = self.fahrenheit + (absoluteZeroFahrenhet * -1) / 1.8
     }
     
     /// Convert from degree Kelvin to degree Celsius
     public func KelvinToCelsius() {
-        self.celsius = self.kelvin - absoluteZeroCelsius
+        self.celsius = self.kelvin - (absoluteZeroCelsius * -1)
     }
     
     /// Convert from degree Kelvin to degree Fahrenheit
     public func KelvinToFahrenheit() {
-        self.fahrenheit = self.kelvin * 1.8 + absoluteZeroFahrenhet
+        self.fahrenheit = self.kelvin * 1.8 - (absoluteZeroFahrenhet * -1)
     }
 }
 

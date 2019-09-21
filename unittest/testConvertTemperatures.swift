@@ -43,4 +43,12 @@ class unittest: XCTestCase {
         let expected = -73.33
         XCTAssertEqual(result, expected)
     }
+    
+    func testCelsiusToKelvin() {
+        convert.setCelsius(value: 254)
+        convert.celsiusToKelvin()
+        let result = convert.getKelvin()
+        let expected = 527.15
+        XCTAssertEqual(result, expected)
+    }
 }
